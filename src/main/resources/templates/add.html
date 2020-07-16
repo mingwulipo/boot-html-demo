@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Insert title here</title>
+</head>
+<body>
+<script src="/js/jquery-1.10.2.min.js"></script>
+
+<p style="color:red">添加</p>
+<h2>欢迎，${name},hehe</h2>
+<!--带值用${}，必须在th标签中才能显示。下面的显示，上面的不显示}-->
+<p th:text="'用户名称：' + ${name}"/>
+</body>
+</html>
