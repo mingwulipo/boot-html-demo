@@ -11,5 +11,35 @@
 <h2>欢迎，${name},hehe</h2>
 <!--带值用${}，必须在th标签中才能显示。下面的显示，上面的不显示}-->
 <p th:text="'用户名称：' + ${name}"/>
+
+<!--th:utext和th:text的区别是：th:text会对<和>进行转义，而th:utext不会转义-->
+<p th:utext="${divImg}"></p>
+
+<hr>
+<!--遍历集合-->
+<table>
+    <thead>
+    <tr>
+        <th style="text-align: center;width: 50px">序号</th>
+        <th style="text-align: center;width: 50px">用户id</th>
+        <th style="text-align: center;width: 50px">姓名</th>
+        <th style="text-align: center;width: 50px">年龄</th>
+        <th style="text-align: center;width: 50px">偶数</th>
+        <th style="text-align: center;width: 50px">奇数</th>
+    </tr>
+    </thead>
+    <tbody style="text-align: center;" >
+    <tr th:each="user,memberStat:${userList}">
+        <td th:text="${memberStat.index + 1}"/>
+        <td th:text="${user.id}"/>
+        <td th:text="${user.name}"/>
+        <td th:text="${user.age}"/>
+        <td th:text="${memberStat.even}"/>
+        <td th:text="${memberStat.odd}"/>
+    </tr>
+
+    </tbody>
+</table>
+
 </body>
 </html>
